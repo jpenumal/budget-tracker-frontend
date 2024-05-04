@@ -17,7 +17,7 @@ function Home() {
   if (!token) navigate("/login");
   const fetchData = () => {
     axios
-      .get("http://localhost:3000/api/expenses", {
+      .get(process.env.REACT_APP_SERVER_URL + "/api/expenses", {
         headers: {
           Authorization: token,
         },
@@ -32,7 +32,7 @@ function Home() {
         }
       });
     axios
-      .get("http://localhost:3000/api/budgets", {
+      .get(process.env.REACT_APP_SERVER_URL + "/api/budgets", {
         headers: {
           Authorization: token,
         },

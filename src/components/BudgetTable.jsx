@@ -16,7 +16,7 @@ function BudgetTable({ budget, expenses, fetch }) {
 
   const deleteBudget = (id) => {
     axios
-      .delete("http://localhost:3000/api/budgets/" + id, {
+      .delete(process.env.REACT_APP_SERVER_URL + "/api/budgets/" + id, {
         headers: {
           Authorization: token,
         },

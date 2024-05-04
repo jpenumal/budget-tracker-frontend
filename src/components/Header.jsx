@@ -17,7 +17,7 @@ function Header() {
 
   function handleRefreshToken() {
     axios
-      .get("http://localhost:3000/api/refresh-token", {
+      .get(process.env.REACT_APP_SERVER_URL + "/api/refresh-token", {
         headers: {
           Authorization: token,
         },

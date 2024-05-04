@@ -32,9 +32,12 @@ function Login() {
     e.preventDefault();
 
     try {
-      const { data } = await axios.post("http://localhost:3000/api/login", {
-        ...inputValue,
-      });
+      const { data } = await axios.post(
+        process.env.REACT_APP_SERVER_URL + "/api/login",
+        {
+          ...inputValue,
+        }
+      );
       const { success, message, token } = data;
       if (success) {
         handleSuccess(message);

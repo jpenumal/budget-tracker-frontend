@@ -15,7 +15,7 @@ function Addbudget() {
 
     try {
       await axios.post(
-        "http://localhost:3000/api/addBudget",
+        process.env.REACT_APP_SERVER_URL + "/api/addBudget",
         {
           category,
           amount,

@@ -31,9 +31,12 @@ function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("http://localhost:3000/api/signup", {
-        ...inputValue,
-      });
+      const { data } = await axios.post(
+        process.env.REACT_APP_SERVER_URL + "/api/signup",
+        {
+          ...inputValue,
+        }
+      );
       const { success, message } = data;
       if (success) {
         handleSuccess("User created successfully!");

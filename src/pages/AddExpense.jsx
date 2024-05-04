@@ -13,11 +13,14 @@ const AddExpensePage = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/budgets", {
-          headers: {
-            Authorization: token,
-          },
-        });
+        const response = await axios.get(
+          process.env.REACT_APP_SERVER_URL + "/api/budgets",
+          {
+            headers: {
+              Authorization: token,
+            },
+          }
+        );
         setCategories(response.data);
       } catch (error) {
         console.error(error);
@@ -31,7 +34,7 @@ const AddExpensePage = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/addExpense",
+        process.env.REACT_APP_SERVER_URL + "/api/addExpense",
         {
           category: selectedCategory,
           description,
