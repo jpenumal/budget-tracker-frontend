@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Header from "../components/Header";
 import { ReactComponent as Expense } from "../assets/expense.svg";
+import { toast } from "react-toastify";
 
 const AddExpensePage = () => {
   const [categories, setCategories] = useState([]);
@@ -42,7 +43,9 @@ const AddExpensePage = () => {
           },
         }
       );
-
+      toast.success("Added succesfully", {
+        position: "top-right",
+      });
       setSelectedCategory("");
       setDescription("");
       setAmount("");
@@ -100,16 +103,6 @@ const AddExpensePage = () => {
                   </option>
                 ))}
               </select>
-            </div>
-            <div className="form-control-container">
-              <label htmlFor="description">Description:</label>
-              <input
-                type="text"
-                id="description"
-                className="form-control"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-              />
             </div>
             <div className="form-control-container">
               <label htmlFor="amount">Amount:</label>

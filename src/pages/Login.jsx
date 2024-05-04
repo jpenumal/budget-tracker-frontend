@@ -44,7 +44,6 @@ function Login() {
         handleError(message);
       }
     } catch (error) {
-      console.log(error);
       handleError(error?.response?.data?.message);
     }
     setInputValue({
@@ -55,30 +54,39 @@ function Login() {
   };
   return (
     <div className="container">
-      <div className="background-image"></div>
+      <div className="background-image" aria-hidden="true"></div>
       <div className="form-box">
         <h1>Login</h1>
-
         <div className="body-form">
           <form onSubmit={handleSubmit}>
             <div className="input-group mb-3">
+              <label htmlFor="email" style={{ paddingLeft: "20px" }}>
+                Email
+              </label>
               <input
                 className="form-control"
                 type="email"
                 name="email"
+                id="email"
                 value={email}
-                placeholder="Email"
+                placeholder="Enter Email"
                 onChange={handleOnChange}
+                required
               />
             </div>
             <div className="input-group mb-3">
+              <label htmlFor="password" style={{ paddingLeft: "20px" }}>
+                Password
+              </label>
               <input
                 type="password"
+                id="password"
                 className="form-control"
-                placeholder="Password"
+                placeholder="Enter Password"
                 name="password"
                 value={password}
                 onChange={handleOnChange}
+                required
               />
             </div>
             <button type="submit" className="btn btn-secondary btn-block">

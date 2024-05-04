@@ -41,9 +41,7 @@ function SignUp() {
       } else {
         handleError(message);
       }
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
     setInputValue({
       ...inputValue,
       email: "",
@@ -61,37 +59,46 @@ function SignUp() {
         <div className="body-form">
           <form onSubmit={handleSubmit}>
             <div className="input-group mb-3">
+              <label htmlFor="email" style={{ paddingLeft: "20px" }}>
+                Email
+              </label>
               <input
                 className="form-control"
                 type="email"
                 name="email"
                 value={email}
                 id="email"
-                placeholder="Email"
+                placeholder="Enter Email"
                 onChange={handleOnChange}
                 required
               />
             </div>
             <div className="input-group mb-3">
+              <label htmlFor="name" style={{ paddingLeft: "20px" }}>
+                Name
+              </label>
               <input
                 className="form-control"
                 type="text"
                 name="name"
                 value={name}
                 id="name"
-                placeholder="Name"
+                placeholder="Enter Name"
                 onChange={handleOnChange}
                 required
               />
             </div>
             <div className="input-group mb-3">
+              <label htmlFor="password" style={{ paddingLeft: "20px" }}>
+                Password
+              </label>
               <input
                 type="password"
                 name="password"
                 id="password"
                 value={password}
                 onChange={handleOnChange}
-                placeholder="Password"
+                placeholder="Enter Password"
                 className="form-control"
                 required
               />

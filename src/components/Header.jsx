@@ -28,10 +28,10 @@ function Header() {
   }
 
   return (
-    <div className="header-container">
+    <div className="header-container" role="banner">
       <div className="header">
         <span className="heading">Budget Tracker</span>
-        <div className="nav">
+        <nav className="nav">
           <div className="header-element">
             <Link to={"/"}>Home</Link>
           </div>
@@ -41,12 +41,12 @@ function Header() {
           <div className="header-element">
             <Link to={"/add-budget"}>Add Budget</Link>
           </div>
-          <div className="header-element" onClick={logOut}>
-            <span>Log out</span>
+          <div className="header-element">
+            <span onClick={logOut}>Log out</span>
           </div>
-        </div>
+        </nav>
       </div>
-      {tokenValidTime && tokenValidTime < 21 && (
+      {tokenValidTime && tokenValidTime > 0 && tokenValidTime < 21 && (
         <div
           style={{
             width: "100vw",

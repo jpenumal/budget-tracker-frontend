@@ -3,6 +3,7 @@ import axios from "axios";
 import { useAuth } from "../hooks/useAuth";
 import Header from "../components/Header";
 import { ReactComponent as Budget } from "../assets/budget.svg";
+import { toast } from "react-toastify";
 
 function Addbudget() {
   const [category, setCategory] = useState("");
@@ -28,6 +29,9 @@ function Addbudget() {
 
       setCategory("");
       setAmount("");
+      toast.success("Added succesfully", {
+        position: "top-right",
+      });
     } catch (error) {
       console.error(error);
     }

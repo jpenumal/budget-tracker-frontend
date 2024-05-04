@@ -109,13 +109,11 @@ form button {
 .header-element a {
   color: white;
   text-decoration: none;
+  padding: 5px;
 }
 
-.header-element:hover a {
-  color: black;
-}
-
-.header-element:hover {
+.header-element a:hover,
+.header-element span:hover {
   background-color: white;
   color: black;
   cursor: pointer;
@@ -140,4 +138,19 @@ form button {
 
 .form-control-container label {
   flex-grow: 1;
+}
+
+.input-group {
+  text-align: left;
+}
+
+.bordered-table th,
+.bordered-table td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.bordered-table th {
+  background-color: #f2f2f2; /* Optional: add background color to header row */
 }
