@@ -16,7 +16,7 @@ const UpdateCategory = () => {
 
     try {
       await axios.put(
-        `http://localhost:3000/api/budgets/${data?.id}`,
+        `${process.env.REACT_APP_SERVER_URL}/api/budgets/${data?.id}`,
         {
           category,
           amount,
